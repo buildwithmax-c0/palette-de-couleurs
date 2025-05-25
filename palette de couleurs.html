@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palette de Couleurs</title>
+    <style>
+        .color-box {
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Palette de Couleurs Aléatoires</h2>
+    <button onclick="generateColors()">Générer des couleurs</button>
+    <div id="colorsContainer"></div>
+
+    <script>
+        function generateColors() {
+            var container = document.getElementById("colorsContainer");
+            container.innerHTML = ""; // Clear the previous colors
+
+            for (var i = 0; i < 5; i++) {
+                var randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+                var colorBox = document.createElement("div");
+                colorBox.classList.add("color-box");
+                colorBox.style.backgroundColor = randomColor;
+                container.appendChild(colorBox);
+            }
+        }
+    </script>
+</body>
+</html>
